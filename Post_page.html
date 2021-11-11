@@ -224,11 +224,11 @@
 
                                                 <span class="valid_err_text"></span>
                                             </div>
-                                            <div class="infor_product-category-ali">
+                                            <!-- <div class="infor_product-category-ali">
                                                 <div class="tilte-selects">Tình trạng sản phẩm:<span class="Obligatory">*</span></div>
                                                 <input type="text" name="status_product" id="Status_product" class="infor_product-category-ali-select" placeholder="Tình trạng sản phẩm (bắt buộc) vd:sản phẩm còn mới, dùng được 2 năm,... ">
                                                 <span class="valid_err_text"></span>
-                                            </div>
+                                            </div>-->
                                             <div class="infor_product-category-ali">
                                                 <div class="tilte-selects">Mô tả chi tiết:<span class="Obligatory">*</span></div>
                                                 <textarea class="infor_product-category-ali-select" inputmode="text" id="Decrip_product" name="decrip" placeholder="Viết tiếng Việt có dấu
@@ -365,7 +365,7 @@ Hãy mô tả thật rõ ràng để sản phẩm của bạn được bán nhan
                 Validator.isValue('#Name_product'),
                 Validator.isValue('#Price_product'),
                 Validator.isMoney('#Price_product'),
-                Validator.isValue('#Status_product'),
+                /*Validator.isValue('#Status_product'),*/
                 Validator.isValue('#Decrip_product'),
             ],
             Onsubmit: function(data) {
