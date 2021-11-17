@@ -268,16 +268,3 @@ ol li {
     color: var(--text-color);
     border-radius: 5px;
 }
-
-
-/***********************TRIGGER*****************************************/
-
-.valid_err {
-    border: red 1px solid;
-}
-
-.valid_err_text {
-    font-weight: 200;
-    font-size: 1.4rem;
-    color: red;
-}

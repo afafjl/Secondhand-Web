@@ -87,7 +87,16 @@ Validator.isMoney = function(selector) {
         selector: selector,
         test: function(value) {
             var regex = /^[0-9]+$/;
-            return regex.test(value) ? undefined : 'Vui lòng nhập số tiền!';
+            return regex.test(value) ? undefined : 'Vui lòng nhập số !';
+        }
+    };
+}
+Validator.isMail = function(selector) {
+    return {
+        selector: selector,
+        test: function(value) {
+            var regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return regex.test(value) ? undefined : 'Vui lòng nhập mail!';
         }
     };
 }
