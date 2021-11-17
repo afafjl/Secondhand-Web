@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/header-footer.css">
     <link rel="stylesheet" href="./assets/css/Product_page.css">
+    <script type="text/javascript" src="./assets/java/product_page_slider.js" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     </style>
@@ -135,11 +136,7 @@
                             Đăng tin
                         </a>
                     </div>
-                    <div class="header__cast">
-                        <a class="header__cast-btn" href="">
-                            <i class="header__cast-btn-icon ti-shopping-cart"></i>
-                        </a>
-                    </div>
+                    
                 </div>
             </div>
         </header>
@@ -151,7 +148,38 @@
                     </div>
                     <div class="grid__column-6">
                         <div class="contain__produce">
-                            <span class="produce__img"> Hình ảnh </span>
+                            <!-- Thẻ Chứa Slideshow -->
+                            <div class="slideshow-container">
+                            <!-- Kết hợp hình ảnh và nội dung cho mội phần tử trong slideshow-->
+                                <div class="mySlides fade">
+                                    <img src="./assets/img/bmw-img/BMW1.png" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="./assets/img/bmw-img/BMW2.png" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="./assets/img/bmw-img/BMW3.png" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="./assets/img/bmw-img/BMW4.png" style="width:100%">
+                                </div>
+                                <div class="mySlides fade">
+                                    <img src="./assets/img/bmw-img/BMW5.png" style="width:100%">
+                                </div>
+                        
+                            <!-- Nút điều khiển mũi tên-->
+                                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                                <a class="next" onclick="plusSlides(1)">❯</a>
+                            </div>
+                            <br>
+                            <!-- Nút tròn điều khiển slideshow-->
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                                <span class="dot" onclick="currentSlide(4)"></span>
+                                <span class="dot" onclick="currentSlide(5)"></span>
+                            </div>
                         </div>
                         <div class="contain__title">
                             <h2 class="contain__title-h2">BWM</h2>      
@@ -196,30 +224,32 @@
                                 <div class="contain__title">
                                     <h2 class="contain__title-h2">DONG NAY DAI VLLLLLLL</h2>
                                 </div>
-                                <div>
+                                <div class="contain__user-page-box">
                                     <i class=" contain__user-online ti-eye"> Đang hoạt động</i>
                                     <a class="contain__user-page" href="">Xem trang </a>
                                 </div>
-                            
+                              
                                 <span class="contain__number">
                                     0123456789
                                 </span>
                                 <div class="contain__user-chat">
                                     <i class="contain__user-chaticon ti-comments"></i>
-                                    <span class="contain__user-comment">CHAT VỚI NGƯỜI BÁN</span>
+                                    <a class="contain__user-comment">CHAT VỚI NGƯỜI BÁN</a>
                                 </div>
-                                <div class="contain__user-calendar">
-                                    <i class="contain__calendar-icon ti-calendar"></i>
-                                    <span class="contain__user-dayjoin">Ngày tham gia :</span>
-                                    <span class="contain__user-dayjoins">15/04/1105</span>
-                                </div>
-                                <div class="contain__user-add">
-                                    <i class="contain__location-icon ti-location-pin"></i>
-                                    <span class="contain__user-add">Địa chỉ:</span>
-                                    <span class="contain__user-adds">101010101 TP.HCM</span>
-                                </div> 
+                                <div class="contain__user-location">
+                                    <div class="contain__user-calendar">
+                                        <i class="contain__calendar-icon ti-calendar"></i>
+                                        <span class="contain__user-dayjoin">Ngày tham gia :</span>
+                                        <span class="contain__user-dayjoins">15/04/1105</span>
+                                    </div>
+                                    <div class="contain__user-add">
+                                        <i class="contain__location-icon ti-location-pin"></i>
+                                        <span class="contain__user-add">Địa chỉ:</span>
+                                        <span class="contain__user-adds">101010101 TP.HCM</span>
+                                    </div>
+                                </div>     
                             </div>
-                        </div>
+                        </div>  
                     </div>
 
                     <div class="grid__column-1">
@@ -228,6 +258,38 @@
                 </div>
             </div>
         </div>
+        <footer class="footer">
+
+            <div class="">
+                <div class="footer-icon">
+                    <center>
+                        <div class="footer-icon-box">
+                            <a href="#" class="footer-link"><i class="footer-button ti-facebook "></i></a>
+                        </div>
+                        <div class="footer-icon-box">
+                            <a href="#" class="footer-link"><i class="footer-button ti-instagram "></i></a>
+                        </div>
+                        <div class="footer-icon-box">
+                            <a href="#" class="footer-link"><i class="footer-button ti-linkedin"></i></a>
+                        </div>
+                        <div class="footer-icon-box">
+                            <a href="#" class="footer-link"><i class="footer-button ti-twitter-alt"></i></a>
+                        </div>
+                        <div class="footer-icon-box">
+                            <a href="#" class="footer-link"><i class="footer-button ti-pinterest"></i></a>
+                        </div>
+                    </center>
+                </div>
+                <div class="footer-bottom">
+                    <center>
+                        <p>Địa chỉ: Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh. Tổng đài hỗ trợ: (028) 372 52002 - Email: <a href="mailto:19521852@gm.uit.edu.vn">19521852@gm.uit.edu.vn</a></p>
+                        <p>© 2021 - Bản quyền thuộc về BaiRac Team</p>
+                        <center>
+                </div>
+
+            </div>
+
+        </footer>    
     </div>
 </body>
 </html>
