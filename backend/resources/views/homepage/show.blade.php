@@ -1,5 +1,9 @@
-@extends('layouts.app')
 
+<head>
+    <link rel="stylesheet" href="{{ URL::asset('css/reset.css');}}">
+    <link rel="stylesheet" href="{{ URL::asset('css/base.css');}}">
+</head>
+@extends('layouts.app')
 @section('content')
 
 
@@ -16,7 +20,8 @@
 
                     <li class="category-item">
                         <a href="" class="category-item-link">
-                            <img src="./assets/img/category/thoitrang.png" class="category-item-link-icon" alt=""> Thời trang
+                        
+                            <img src="{{ URL::asset('imgages/category/thoitrang.png');}}" class="category-item-link-icon" alt=""> Thời trang
                         </a>
                     </li>
                     <li class="category-item">

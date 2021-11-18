@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="{{ URL::asset('css/reset.css');}}">
-    <link rel="stylesheet" href="{{ URL::asset('css/base.css');}}">
+
     <link rel="stylesheet" href="{{ URL::asset('css/header-footer.css');}}">
     <link rel="stylesheet" href="{{ URL::asset('css/home_page.css');}}">
     <style>
@@ -24,7 +23,7 @@
                     <nav class="header__navbar">
                         <ul class="header__navbar-list">
                             <li class="header__navbar-item">
-                                <img class="logo" src="./assets/img/logo_web_offi.png" alt="">
+                                <img class="logo" src="{{ URL::asset('images\logo_web_offi.png');}}" alt="">
                             </li>
                         </ul>
 
@@ -176,7 +175,7 @@
                     <center>
                         <p>Địa chỉ: Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh. Tổng đài hỗ trợ: (028) 372 52002 - Email: <a href="mailto:19521852@gm.uit.edu.vn">19521852@gm.uit.edu.vn</a></p>
                         <p>© 2021 - Bản quyền thuộc về BaiRac Team</p>
-                        <center>
+                    </center>
                 </div>
 
             </div>

@@ -1,100 +1,106 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/header-footer.css">
+    <link rel="stylesheet" href="./assets/css/Product_page.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+    <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Sản Phẩm</title>
+</head>
+
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-9 pt-3"> 
-           
-                    <div ><h3>{{ $post->title }}</h3></div>
-                    <div class="text-dark"> {!! nl2br(e($post->description))!!}</div>
-               
-              <div class="row">
-                <div class="col-3">
-                    @can('delete', $post)
-                        <a href="/delete/{{$post->id}}">delete</a>  
-                    @endcan     
-                </div>
-                
-                <div class="col-3">
-                    @can('delete', $post)
-                        <a href="/p/{{$post->id}}/edit">edit</a>     
-                    @endcan
-                </div>
-            </div>
-        </div>
-        <div class="col-3 pt-3">
-            <div>
-                <div class="d-flex align-items-center">
-                    <div class="pr-3">
-                        <img src="{{$post->user->profile->profileImage() }} " class="rounded-circle w-100" style="max-width: 40px;">
-                    </div>
-                    <div>
-                        <div class="font-weight-bold">
-                            <a href="/profile/{{ $post->user->id }}">
-                                <span class="text-dark">{{ $post->user->username }}</span>
-                            </a>     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div>
-        <div class="p-3 pt-4"><h5>Comments</h5></div>
-        
-            @foreach($post->comments as $comment)
-                <div class=" row p-4">
-                         <div class="col-1 ">
-                             <a href="/profile/{{ $comment->user_id }} "> <img src="{{$comment->user->profile->profileImage() }} " class="rounded-circle w-100" style="max-width: 28px;">
-                                       </a>
+
+<div class="contain">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__column-1">
+
+                    </div>
+                    <div class="grid__column-6">
+                        <div class="contain__produce">
+                            <span class="produce__img"> Hình ảnh </span>
                         </div>
-                        <div class="col-11 ">
-                                <div class="font-weight-bold">
-                                    <a href="/profile/{{ $comment->user->id }}">
-                                        <span class="text-dark">{{ $comment->user->username }}</span>
-                                    </a>     
+                        <div class="contain__title">
+                            <h2 class="contain__title-h2">BWM</h2>      
+                            <div>   
+                                <span class="contain__title-price">1.950.000.000 đ</span>
+                                <a class="contain__title-follow" href="">Lưu tin <i class="title__header-icon ti-heart">
+                                </i></a>
+                            </div>
+                                <div>
+                                <span class="contain__notify-decrip">Khi giới hạn không thể ngăn lối
+                                    thành công, cùng BMW S1000RR đá-nh thức và cảm nhận mọi giác quan
+                                    trong bạn để chạm đến đỉnh vinh quang. </span>
+                            </div>
+                        </div>    
+                        <div class="contain__title-body">
+                            <div>
+                                <i class="contain__title-fix-icon ti-menu-alt"></i>
+                                <span class="contain__title-fix">Tình trạng: Đã sử dụng (chưa sửa chữa)</span>
+                                <i class="contain__title-device-icon ti-shopping-cart-full"></i>
+                                <span class="contain__title-device">Thiết bị: S1000RR</span>  
+                            </div>
+                            <div class="contain__title">
+                                <i class=" contain__title-firm-icon ti-package"></i>
+                                <span class="contain__title-firm">Hãng: BWM</span>
+                                <i class="contain__title-from-icon ti-world"></i>
+                                <span class="contain__title-from">Xuất xứ: Châu Âu </span>
+                            </div>                  
+                        </div>  
+                        <div class="contain__footer">
+                            <div>
+                                <h2 class="contain__footer-h2">Khu Vực</h2>
+                                <i class="contain__title-area-icon   ti-location-pin"></i>
+                                <span class="contain__title-area">Linh Trung Thủ Đức</span>
+                            </div>                
+                        </div>
+                    </div>
+                    <div class="grid__column-4">
+                        <div class="contain__user">
+                            <div class="contain__user-img"><img class="user__img" src="./assets/img/img-tt/user.png" alt=""></div>
+                            <div class="contain__header">
+                                
+                                <div class="contain__title">
+                                    <h2 class="contain__title-h2">DONG NAY DAI VLLLLLLL</h2>
                                 </div>
-                                <div class="text-dark">{!! nl2br(e($comment->description))!!}</div>
-                        </div>
-                        
-
-                </div>
-             @endforeach    
-                
-        
-    </div>
-    <form action="/sent/{{$post->id}}" enctype="multipart/form-data" method="post">
-                    @csrf
-
-                    <div class="row">
-                        <div class="col-8 offset-2">
-
-                            <div class="form-group row">
-                                    <label for="desciption" class="col-md-4 col-form-label">Add comment</label>
-                                    
-                                    <textarea id="description"
-                                    rows="2" cols="80"
-                                    class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
-                                    name="description"
-                                    value="{{ old('description') }}"
-                                    autocomplete="description" autofocus
-                                    id="description" 
-                                    ></textarea>
-
-                                @if ($errors->has('description'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('description') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                                <div>
+                                    <i class=" contain__user-online ti-eye"> Đang hoạt động</i>
+                                    <a class="contain__user-page" href="">Xem trang </a>
+                                </div>
                             
-                            <div class="row pt-4">
-                                <button class="btn btn-primary">Sent</button>
+                                <span class="contain__number">
+                                    0123456789
+                                </span>
+                                <div class="contain__user-chat">
+                                    <i class="contain__user-chaticon ti-comments"></i>
+                                    <span class="contain__user-comment">CHAT VỚI NGƯỜI BÁN</span>
+                                </div>
+                                <div class="contain__user-calendar">
+                                    <i class="contain__calendar-icon ti-calendar"></i>
+                                    <span class="contain__user-dayjoin">Ngày tham gia :</span>
+                                    <span class="contain__user-dayjoins">15/04/1105</span>
+                                </div>
+                                <div class="contain__user-add">
+                                    <i class="contain__location-icon ti-location-pin"></i>
+                                    <span class="contain__user-add">Địa chỉ:</span>
+                                    <span class="contain__user-adds">101010101 TP.HCM</span>
+                                </div> 
                             </div>
-                        
                         </div>
                     </div>
-    </form>
-</div>
+
+                    <div class="grid__column-1">
+
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection
